@@ -1,4 +1,12 @@
 #coding:utf-8
+'''
+通过logging写日志文件
+
+@author = 'libin'
+
+@e_main = 'libin033@163.com'
+'''
+
 
 import logging
 
