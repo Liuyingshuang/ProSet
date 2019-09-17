@@ -1,34 +1,33 @@
 #coding:utf-8
-import os
-import time
-import signal
-import threading
+# import subprocess
+# cmd = ['ping', '10.43.19.90']
+# import psutil
+# try:
+#     subprocess.run(cmd, timeout=5)
+# except subprocess.TimeoutExpired as e:
+#
+#     print(e)
+#     print('process ran too long')
 
-process = []
+# status, output = subprocess.getstatusoutput('ping 10.43.19.90')
+#
+# print(status)
+# print(output)
 
-def KillSubProcess(signum,_):
-    global process
-    for pid in process:
-        print("now kill process %d"%pid)
-        os.kill(pid,signal.SIGKILL)
+# try:
+#     subprocess.check_call('ping 10.43.19.36')
+# except subprocess.TimeoutExpired as e:
+#     print(e)
 
-def child():
-    while True:
-        print("Child process",os.getpid())
-        time.sleep(1)
-
-if __name__ == '__main__':
-    signal.signal(signal.SIGALRM, KillSubProcess)
-    signal.alarm(5)
-    for i in range(10):
-        newpid  = os.fork()
-        if newpid == 0:
-            child()
-        else:
-            process.append(newpid)
-            print("Parent process ",os.getpid(),newpid)
-    time.sleep(20)
-    signal.alarm(0)
-    print("Main process exit")
-
+# try:
+#     p = subprocess.Popen('curl www.baidu1.com')
+#     print(p)
+#     print(p.pid)
+#     ret = p.wait(timeout=5)
+#     print(ret)
+#     import  time
+#     time.sleep(3)
+#     p.kill()
+# except subprocess.TimeoutExpired as e:
+#     print(e)
 
