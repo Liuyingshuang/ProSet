@@ -6,17 +6,10 @@ import sys
 import paramiko
 import platform
 import stat
+sys.path.append(r'../Logging')
+from OutLog import Logging
 
 
-UPHOST = '10.24.170.242'
-UPUSER = 'ftpCLT'
-UPPWD = 'ftpCLT'
-UPPORT = 22
-
-DOWNHOST = '10.24.170.242'
-DOWNUSER = 'ftpCLT'
-DOWNPWD = 'ftpCLT'
-DOWNPORT = 22
 
 def upload(local, remote, logger):
     '''
@@ -163,5 +156,7 @@ def getall(sftp, remote, local):
         for f in sftp.listdir_attr(remote):
             getall(os.path.join(remote, f.filename), local)
 
-
+if __name__ == '__main__':
+    logger = Logging('test.log')
+    download(r'/WORK/home/qx-data/glb_fcst/gfs/gfs.2019091800', r'/WORK/home/qx-fy4/PGSDATA/FY4A/NWP/wzip', logger)
 
