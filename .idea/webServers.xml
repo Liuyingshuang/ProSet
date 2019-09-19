@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="eaa9f416-ee97-470f-853e-6a6f91f9d488" name="192.168.2.9" url="http://192.168.2.9">
+        <fileTransfer host="192.168.2.9" port="22" rootFolder="/WORK/home/qx-fy4/PGSWORK/FY4A/GIIRS/EXE" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
