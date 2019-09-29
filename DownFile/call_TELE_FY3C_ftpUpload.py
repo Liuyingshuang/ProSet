@@ -59,7 +59,7 @@ def Ftp_upload_FTP_bak(local_path,ftp_path,patten):
     ftp = ftplib.FTP(HOST)  
     ftp.login(user=USER,passwd=PWD)  
     print '### connect ftp server: %s ...'%HOST
-    print 'Local_path : %s'%local_path    
+    print('Local_path : %s'%local_path)
     if not os.path.isdir(local_path):    
         return  
     ftp.cwd(ftp_path)
